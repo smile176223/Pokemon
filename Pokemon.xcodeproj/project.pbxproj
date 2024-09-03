@@ -12,6 +12,7 @@
 		0C00D97E2C869681007DDBA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C00D97D2C869680007DDBA2 /* Assets.xcassets */; };
 		0C00D9822C869681007DDBA2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C00D9812C869681007DDBA2 /* Preview Assets.xcassets */; };
 		0C00D98F2C869A7B007DDBA2 /* LoadPokemonFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D98E2C869A7B007DDBA2 /* LoadPokemonFromRemoteUseCaseTests.swift */; };
+		0C00D9972C86B22E007DDBA2 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9962C86B22E007DDBA2 /* HTTPClientSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		0C00D9812C869681007DDBA2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0C00D98C2C869A7B007DDBA2 /* PokemonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C00D98E2C869A7B007DDBA2 /* LoadPokemonFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPokemonFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
+		0C00D9962C86B22E007DDBA2 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +96,18 @@
 		0C00D98D2C869A7B007DDBA2 /* PokemonTests */ = {
 			isa = PBXGroup;
 			children = (
+				0C00D9952C86B225007DDBA2 /* Helpers */,
 				0C00D98E2C869A7B007DDBA2 /* LoadPokemonFromRemoteUseCaseTests.swift */,
 			);
 			path = PokemonTests;
+			sourceTree = "<group>";
+		};
+		0C00D9952C86B225007DDBA2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0C00D9962C86B22E007DDBA2 /* HTTPClientSpy.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C00D98F2C869A7B007DDBA2 /* LoadPokemonFromRemoteUseCaseTests.swift in Sources */,
+				0C00D9972C86B22E007DDBA2 /* HTTPClientSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
