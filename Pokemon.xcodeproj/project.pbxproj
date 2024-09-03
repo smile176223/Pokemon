@@ -21,6 +21,11 @@
 		0C00D9A42C86DB36007DDBA2 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9A32C86DB36007DDBA2 /* HTTPClient.swift */; };
 		0C00D9A92C86DEB8007DDBA2 /* PokemonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9A82C86DEB8007DDBA2 /* PokemonLoader.swift */; };
 		0C00D9AB2C86DFF2007DDBA2 /* XCTest+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9AA2C86DFF2007DDBA2 /* XCTest+Helpers.swift */; };
+		0C00D9AD2C86E340007DDBA2 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9AC2C86E340007DDBA2 /* URLSessionHTTPClient.swift */; };
+		0C00D9AF2C86E3BA007DDBA2 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9AE2C86E3BA007DDBA2 /* URLSessionHTTPClientTests.swift */; };
+		0C00D9B12C86E470007DDBA2 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9B02C86E470007DDBA2 /* URLProtocolStub.swift */; };
+		0C00D9B32C86F07F007DDBA2 /* PokemonEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9B22C86F07F007DDBA2 /* PokemonEndpoint.swift */; };
+		0C00D9B52C86F09E007DDBA2 /* PokemonEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9B42C86F09E007DDBA2 /* PokemonEndpointTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		0C00D9A32C86DB36007DDBA2 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		0C00D9A82C86DEB8007DDBA2 /* PokemonLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonLoader.swift; sourceTree = "<group>"; };
 		0C00D9AA2C86DFF2007DDBA2 /* XCTest+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+Helpers.swift"; sourceTree = "<group>"; };
+		0C00D9AC2C86E340007DDBA2 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		0C00D9AE2C86E3BA007DDBA2 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
+		0C00D9B02C86E470007DDBA2 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
+		0C00D9B22C86F07F007DDBA2 /* PokemonEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonEndpoint.swift; sourceTree = "<group>"; };
+		0C00D9B42C86F09E007DDBA2 /* PokemonEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonEndpointTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +134,7 @@
 				0C00D9962C86B22E007DDBA2 /* HTTPClientSpy.swift */,
 				0C00D9982C86B2EB007DDBA2 /* XCTestCase+MemoryLeakTracking.swift */,
 				0C00D9AA2C86DFF2007DDBA2 /* XCTest+Helpers.swift */,
+				0C00D9B02C86E470007DDBA2 /* URLProtocolStub.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -136,6 +147,8 @@
 				0C00D9A12C86DB22007DDBA2 /* RemotePokemonLoader.swift */,
 				0C00D9A82C86DEB8007DDBA2 /* PokemonLoader.swift */,
 				0C00D9A32C86DB36007DDBA2 /* HTTPClient.swift */,
+				0C00D9AC2C86E340007DDBA2 /* URLSessionHTTPClient.swift */,
+				0C00D9B22C86F07F007DDBA2 /* PokemonEndpoint.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -146,6 +159,8 @@
 				0C00D9952C86B225007DDBA2 /* Helpers */,
 				0C00D98E2C869A7B007DDBA2 /* LoadPokemonFromRemoteUseCaseTests.swift */,
 				0C00D99A2C86B9E6007DDBA2 /* PokemonMapperTests.swift */,
+				0C00D9AE2C86E3BA007DDBA2 /* URLSessionHTTPClientTests.swift */,
+				0C00D9B42C86F09E007DDBA2 /* PokemonEndpointTests.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -250,9 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C00D9B32C86F07F007DDBA2 /* PokemonEndpoint.swift in Sources */,
 				0C00D97C2C86967F007DDBA2 /* ContentView.swift in Sources */,
 				0C00D9A22C86DB22007DDBA2 /* RemotePokemonLoader.swift in Sources */,
 				0C00D9A42C86DB36007DDBA2 /* HTTPClient.swift in Sources */,
+				0C00D9AD2C86E340007DDBA2 /* URLSessionHTTPClient.swift in Sources */,
 				0C00D9A02C86DB10007DDBA2 /* Pokemon.swift in Sources */,
 				0C00D9A92C86DEB8007DDBA2 /* PokemonLoader.swift in Sources */,
 				0C00D99E2C86DAF4007DDBA2 /* PokemonMapper.swift in Sources */,
@@ -265,6 +282,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C00D99B2C86B9E6007DDBA2 /* PokemonMapperTests.swift in Sources */,
+				0C00D9B12C86E470007DDBA2 /* URLProtocolStub.swift in Sources */,
+				0C00D9B52C86F09E007DDBA2 /* PokemonEndpointTests.swift in Sources */,
+				0C00D9AF2C86E3BA007DDBA2 /* URLSessionHTTPClientTests.swift in Sources */,
 				0C00D98F2C869A7B007DDBA2 /* LoadPokemonFromRemoteUseCaseTests.swift in Sources */,
 				0C00D9972C86B22E007DDBA2 /* HTTPClientSpy.swift in Sources */,
 				0C00D9AB2C86DFF2007DDBA2 /* XCTest+Helpers.swift in Sources */,
