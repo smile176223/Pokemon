@@ -38,7 +38,7 @@ final class LoadPokemonFromRemoteUseCaseTests: XCTestCase {
     
     // MARK: - Helper
     
-    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: RemotePokemonLoader, client: HTTPClientSpy) {
+    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: PokemonLoader, client: HTTPClientSpy) {
         let url = anyURL()
         let client = HTTPClientSpy()
         let loader = RemotePokemonLoader(url: url, client: client)
@@ -48,8 +48,8 @@ final class LoadPokemonFromRemoteUseCaseTests: XCTestCase {
     }
     
     private func expect(
-        _ sut: RemotePokemonLoader,
-        toCompleteWith expectedResult: Result<String, RemotePokemonLoader.Error>,
+        _ sut: PokemonLoader,
+        toCompleteWith expectedResult: PokemonLoader.Result,
         when action: () -> Void,
         file: StaticString = #file,
         line: UInt = #line

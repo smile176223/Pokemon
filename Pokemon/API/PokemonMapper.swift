@@ -53,11 +53,11 @@ public struct PokemonMapper {
         }
     }
     
-    public static func map(data: Data) -> Result<Pokemon, RemotePokemonLoader.Error> {
-        guard let remoteItem = try? JSONDecoder().decode(RemotePokemon.self, from: data) else {
+    public static func map(data: Data) -> PokemonLoader.Result {
+        guard let remotePokemon = try? JSONDecoder().decode(RemotePokemon.self, from: data) else {
             return .failure(RemotePokemonLoader.Error.invalidData)
         }
         
-        return .success(remoteItem.pokemon)
+        return .success(remotePokemon.pokemon)
     }
 }

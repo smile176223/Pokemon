@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class RemotePokemonLoader {
+public final class RemotePokemonLoader: PokemonLoader {
     private let url: URL
     private let client: HTTPClient
     
@@ -23,7 +23,7 @@ public final class RemotePokemonLoader {
     
     private static var OK_200: Int { 200 }
     
-    public func load(completion: @escaping (Result<String, Error>) -> Void) {
+    public func load(completion: @escaping (PokemonLoader.Result) -> Void) {
         client.get(from: url) { result in
             switch result {
             case let .success((data, response)):

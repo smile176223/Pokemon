@@ -19,6 +19,7 @@
 		0C00D9A02C86DB10007DDBA2 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D99F2C86DB10007DDBA2 /* Pokemon.swift */; };
 		0C00D9A22C86DB22007DDBA2 /* RemotePokemonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9A12C86DB22007DDBA2 /* RemotePokemonLoader.swift */; };
 		0C00D9A42C86DB36007DDBA2 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9A32C86DB36007DDBA2 /* HTTPClient.swift */; };
+		0C00D9A92C86DEB8007DDBA2 /* PokemonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9A82C86DEB8007DDBA2 /* PokemonLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		0C00D99F2C86DB10007DDBA2 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		0C00D9A12C86DB22007DDBA2 /* RemotePokemonLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePokemonLoader.swift; sourceTree = "<group>"; };
 		0C00D9A32C86DB36007DDBA2 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		0C00D9A82C86DEB8007DDBA2 /* PokemonLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				0C00D99D2C86DAF4007DDBA2 /* PokemonMapper.swift */,
 				0C00D99F2C86DB10007DDBA2 /* Pokemon.swift */,
 				0C00D9A12C86DB22007DDBA2 /* RemotePokemonLoader.swift */,
+				0C00D9A82C86DEB8007DDBA2 /* PokemonLoader.swift */,
 				0C00D9A32C86DB36007DDBA2 /* HTTPClient.swift */,
 			);
 			path = API;
@@ -248,6 +251,7 @@
 				0C00D9A22C86DB22007DDBA2 /* RemotePokemonLoader.swift in Sources */,
 				0C00D9A42C86DB36007DDBA2 /* HTTPClient.swift in Sources */,
 				0C00D9A02C86DB10007DDBA2 /* Pokemon.swift in Sources */,
+				0C00D9A92C86DEB8007DDBA2 /* PokemonLoader.swift in Sources */,
 				0C00D99E2C86DAF4007DDBA2 /* PokemonMapper.swift in Sources */,
 				0C00D97A2C86967F007DDBA2 /* PokemonApp.swift in Sources */,
 			);
