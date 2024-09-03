@@ -10,6 +10,16 @@ import Pokemon
 
 final class PokemonMapperTests: XCTestCase {
     
+    func test_map_deliversInvalidDataErrorOnNon200Response() {
+        let samples = [199, 201, 300, 400, 500]
+        
+        samples.forEach { sample in
+            let result = PokemonMapper.map(data: anyData(), from: HTTPURLResponse(statusCode: sample))
+            
+            XCTAssertEqual(result, .failure(.invalidData))
+        }
+    }
+    
     func test_map_deliversInvalidDataErrorOnEmptyJSONWith200Response() {
         let data = makeData([:])
         

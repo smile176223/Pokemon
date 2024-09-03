@@ -24,18 +24,6 @@ final class LoadPokemonFromRemoteUseCaseTests: XCTestCase {
         })
     }
     
-//    func test_load_deliversInvalidDataErrorOnNon200HTTPResponse() {
-//        let (sut, client) = makeSUT()
-//        
-//        let samples = [199, 201, 300, 400, 500]
-//
-//        samples.enumerated().forEach { index, sample in
-//            expect(sut, toCompleteWith: .failure(.invalidData), when: {
-//                client.complete(withStatusCode: sample, data: anyData(), at: index)
-//            })
-//        }
-//    }
-    
     // MARK: - Helper
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: PokemonLoader, client: HTTPClientSpy) {
