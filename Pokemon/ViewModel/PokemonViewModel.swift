@@ -30,23 +30,17 @@ public final class PokemonViewModel: ObservableObject {
     
     func load() {
         pokemonLoader.loadPublisher()
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 switch completion {
                 case .finished:
                     break
                 case let .failure(error):
-                    self?.updateStatus(.error(error))
+                    self?.status = .error(error)
                 }
             } receiveValue: {  [weak self] pokemon in
-                self?.updateStatus(.done(pokemon))
+                self?.status = .done(pokemon)
             }
             .store(in: &cancellables)
     }
-    
-    private func updateStatus(_ status: Status) {
-        DispatchQueue.main.async { [weak self] in
-            self?.status = status
-        }
-    }
-    
 }

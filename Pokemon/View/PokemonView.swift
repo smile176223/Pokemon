@@ -48,7 +48,7 @@ struct PokemonView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                     
-                case let .failure(error):
+                case .failure:
                     Color.gray
                     
                 default:
