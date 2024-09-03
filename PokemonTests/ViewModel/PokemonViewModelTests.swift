@@ -19,9 +19,17 @@ final class PokemonViewModelTests: XCTestCase {
     // MARK: - Helper
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> PokemonViewModel {
-        let sut = PokemonViewModel()
+        let loaderSpy = PokemonLoaderSpy()
+        let sut = PokemonViewModel(pokemonLoader: loaderSpy)
         trackForMemoryLeaks(sut)
         return sut
+    }
+    
+    private class PokemonLoaderSpy: PokemonLoader {
+        
+        func load(completion: @escaping (PokemonLoader.Result) -> Void) {
+            
+        }
     }
 }
 
