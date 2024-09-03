@@ -47,7 +47,7 @@ final class LoadPokemonFromRemoteUseCaseTests: XCTestCase {
         let exp = expectation(description: "Wait for completion")
         sut.load { receivedResult in
             switch receivedResult {
-            case let .success(item):
+            case .success:
                 XCTFail("Should get error")
                 
             case let .failure(error):
