@@ -10,36 +10,36 @@ import Pokemon
 
 final class PokemonMapperTests: XCTestCase {
     
-    func test_map_deliversInvalidDataErrorOnEmptyJSON() {
+    func test_map_deliversInvalidDataErrorOnEmptyJSONWith200Response() {
         let data = makeData([:])
         
-        let pokemon = PokemonMapper.map(data: data)
+        let pokemon = PokemonMapper.map(data: data, from: HTTPURLResponse(statusCode: 200))
         
         XCTAssertEqual(pokemon, .failure(.invalidData))
     }
     
-    func test_map_deliversInvalidDataErrorOnInvalidJSON() {
+    func test_map_deliversInvalidDataErrorOnInvalidJSONWith200Response() {
         let data = Data("Invalid json".utf8)
         
-        let pokemon = PokemonMapper.map(data: data)
+        let pokemon = PokemonMapper.map(data: data, from: HTTPURLResponse(statusCode: 200))
         
         XCTAssertEqual(pokemon, .failure(.invalidData))
     }
     
-    func test_map_deliversPokemonOnValidJSON() {
+    func test_map_deliversPokemonOnValidJSONWith200Response() {
         let (model, json) = makePokemon()
         let data = makeData(json)
         
-        let pokemon = PokemonMapper.map(data: data)
+        let pokemon = PokemonMapper.map(data: data, from: HTTPURLResponse(statusCode: 200))
         
         XCTAssertEqual(pokemon, .success(model))
     }
     
-    func test_map_deliversPokemonOnTypeEmpty() {
+    func test_map_deliversPokemonOnTypeEmptyWith200Response() {
         let (model, json) = makePokemon(type: nil)
         let data = makeData(json)
         
-        let pokemon = PokemonMapper.map(data: data)
+        let pokemon = PokemonMapper.map(data: data, from: HTTPURLResponse(statusCode: 200))
         
         XCTAssertEqual(pokemon, .success(model))
     }

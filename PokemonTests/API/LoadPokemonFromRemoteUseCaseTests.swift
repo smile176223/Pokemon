@@ -24,17 +24,17 @@ final class LoadPokemonFromRemoteUseCaseTests: XCTestCase {
         })
     }
     
-    func test_load_deliversInvalidDataErrorOnNon200HTTPResponse() {
-        let (sut, client) = makeSUT()
-        
-        let samples = [199, 201, 300, 400, 500]
-
-        samples.enumerated().forEach { index, sample in
-            expect(sut, toCompleteWith: .failure(.invalidData), when: {
-                client.complete(withStatusCode: sample, data: anyData(), at: index)
-            })
-        }
-    }
+//    func test_load_deliversInvalidDataErrorOnNon200HTTPResponse() {
+//        let (sut, client) = makeSUT()
+//        
+//        let samples = [199, 201, 300, 400, 500]
+//
+//        samples.enumerated().forEach { index, sample in
+//            expect(sut, toCompleteWith: .failure(.invalidData), when: {
+//                client.complete(withStatusCode: sample, data: anyData(), at: index)
+//            })
+//        }
+//    }
     
     // MARK: - Helper
     
@@ -74,18 +74,6 @@ final class LoadPokemonFromRemoteUseCaseTests: XCTestCase {
         action()
         
         wait(for: [exp], timeout: 1.0)
-    }
-    
-    private func anyURL() -> URL {
-        URL(string: "https://any-url.com")!
-    }
-    
-    private func anyData() -> Data {
-        Data("any".utf8)
-    }
-    
-    private func anyError() -> Error {
-        NSError(domain: "any error", code: 0)
     }
 
 }

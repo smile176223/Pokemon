@@ -20,6 +20,7 @@
 		0C00D9A22C86DB22007DDBA2 /* RemotePokemonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9A12C86DB22007DDBA2 /* RemotePokemonLoader.swift */; };
 		0C00D9A42C86DB36007DDBA2 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9A32C86DB36007DDBA2 /* HTTPClient.swift */; };
 		0C00D9A92C86DEB8007DDBA2 /* PokemonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9A82C86DEB8007DDBA2 /* PokemonLoader.swift */; };
+		0C00D9AB2C86DFF2007DDBA2 /* XCTest+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9AA2C86DFF2007DDBA2 /* XCTest+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		0C00D9A12C86DB22007DDBA2 /* RemotePokemonLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePokemonLoader.swift; sourceTree = "<group>"; };
 		0C00D9A32C86DB36007DDBA2 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		0C00D9A82C86DEB8007DDBA2 /* PokemonLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonLoader.swift; sourceTree = "<group>"; };
+		0C00D9AA2C86DFF2007DDBA2 /* XCTest+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			children = (
 				0C00D9962C86B22E007DDBA2 /* HTTPClientSpy.swift */,
 				0C00D9982C86B2EB007DDBA2 /* XCTestCase+MemoryLeakTracking.swift */,
+				0C00D9AA2C86DFF2007DDBA2 /* XCTest+Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				0C00D99B2C86B9E6007DDBA2 /* PokemonMapperTests.swift in Sources */,
 				0C00D98F2C869A7B007DDBA2 /* LoadPokemonFromRemoteUseCaseTests.swift in Sources */,
 				0C00D9972C86B22E007DDBA2 /* HTTPClientSpy.swift in Sources */,
+				0C00D9AB2C86DFF2007DDBA2 /* XCTest+Helpers.swift in Sources */,
 				0C00D9992C86B2EB007DDBA2 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
