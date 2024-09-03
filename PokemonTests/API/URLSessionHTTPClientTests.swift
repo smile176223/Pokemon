@@ -31,6 +31,27 @@ final class URLSessionHTTPClientTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
     
+    func test_getFromURL_failsOnRequestError() {
+        let requestError = NSError(domain: "Any error", code: 0)
+        URLProtocolStub.stub(data: nil, response: nil, error: requestError)
+        let exp = expectation(description: "Wait for request")
+        
+        makeSUT().get(from: anyURL()) { result in
+            switch result {
+            case .success:
+                XCTFail("Should got error")
+                
+            case let .failure(error as NSError):
+                XCTAssertEqual(requestError.domain, error.domain)
+                XCTAssertEqual(requestError.code, error.code)
+            }
+            
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 1.0)
+    }
+    
     // MARK: - Helper
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> HTTPClient {

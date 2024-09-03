@@ -14,12 +14,22 @@ public final class URLSessionHTTPClient: HTTPClient {
         self.session = session
     }
     
+    public struct UnexpectedError: Error {}
+    
     public func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
         let task = session.dataTask(with: request) { data, response, error in
-
+            completion(Result(catching: {
+                if let error = error {
+                    throw error
+                } else if let data = data, let response = response as? HTTPURLResponse {
+                    return (data, response)
+                } else {
+                    throw UnexpectedError()
+                }
+            }))
         }
         
         task.resume()
