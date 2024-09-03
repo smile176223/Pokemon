@@ -14,6 +14,7 @@
 		0C00D98F2C869A7B007DDBA2 /* LoadPokemonFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D98E2C869A7B007DDBA2 /* LoadPokemonFromRemoteUseCaseTests.swift */; };
 		0C00D9972C86B22E007DDBA2 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9962C86B22E007DDBA2 /* HTTPClientSpy.swift */; };
 		0C00D9992C86B2EB007DDBA2 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9982C86B2EB007DDBA2 /* XCTestCase+MemoryLeakTracking.swift */; };
+		0C00D99B2C86B9E6007DDBA2 /* PokemonMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D99A2C86B9E6007DDBA2 /* PokemonMapperTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		0C00D98E2C869A7B007DDBA2 /* LoadPokemonFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPokemonFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 		0C00D9962C86B22E007DDBA2 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 		0C00D9982C86B2EB007DDBA2 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		0C00D99A2C86B9E6007DDBA2 /* PokemonMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonMapperTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			children = (
 				0C00D9952C86B225007DDBA2 /* Helpers */,
 				0C00D98E2C869A7B007DDBA2 /* LoadPokemonFromRemoteUseCaseTests.swift */,
+				0C00D99A2C86B9E6007DDBA2 /* PokemonMapperTests.swift */,
 			);
 			path = PokemonTests;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C00D99B2C86B9E6007DDBA2 /* PokemonMapperTests.swift in Sources */,
 				0C00D98F2C869A7B007DDBA2 /* LoadPokemonFromRemoteUseCaseTests.swift in Sources */,
 				0C00D9972C86B22E007DDBA2 /* HTTPClientSpy.swift in Sources */,
 				0C00D9992C86B2EB007DDBA2 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
