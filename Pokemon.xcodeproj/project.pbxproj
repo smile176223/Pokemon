@@ -109,9 +109,7 @@
 		0C00D98D2C869A7B007DDBA2 /* PokemonTests */ = {
 			isa = PBXGroup;
 			children = (
-				0C00D9952C86B225007DDBA2 /* Helpers */,
-				0C00D98E2C869A7B007DDBA2 /* LoadPokemonFromRemoteUseCaseTests.swift */,
-				0C00D99A2C86B9E6007DDBA2 /* PokemonMapperTests.swift */,
+				0C00D9A72C86DBDD007DDBA2 /* API */,
 			);
 			path = PokemonTests;
 			sourceTree = "<group>";
@@ -132,6 +130,16 @@
 				0C00D99F2C86DB10007DDBA2 /* Pokemon.swift */,
 				0C00D9A12C86DB22007DDBA2 /* RemotePokemonLoader.swift */,
 				0C00D9A32C86DB36007DDBA2 /* HTTPClient.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		0C00D9A72C86DBDD007DDBA2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0C00D9952C86B225007DDBA2 /* Helpers */,
+				0C00D98E2C869A7B007DDBA2 /* LoadPokemonFromRemoteUseCaseTests.swift */,
+				0C00D99A2C86B9E6007DDBA2 /* PokemonMapperTests.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
