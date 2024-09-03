@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Pokemon
 
 class HTTPClientSpy: HTTPClient {
     private var messages = [(url: URL, completion: (HTTPClient.Result) -> Void)]()
