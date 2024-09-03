@@ -34,6 +34,60 @@ final class LoadPokemonFromRemoteUseCaseTests: XCTestCase {
         })
     }
     
+    // Publisher
+    
+    func test_loadPublisher_deliversErrorOnClientError() {
+        let (sut, client) = makeSUT()
+        
+        let exp = expectation(description: "Wait for completion")
+        
+        let cancellable = sut.loadPublisher()
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    break
+                case let .failure(error):
+                    XCTAssertEqual(error, .unexpectedError)
+                }
+                
+                exp.fulfill()
+            } receiveValue: { _ in
+                XCTFail("Expected failure")
+            }
+        
+        client.complete(with: anyError())
+
+        wait(for: [exp], timeout: 1.0)
+        cancellable.cancel()
+    }
+    
+    func test_loadPublisher_deliversPokemonOn200Response() {
+        let (sut, client) = makeSUT()
+        let (model, json) = makePokemon()
+        let data = makeData(json)
+        
+        let exp = expectation(description: "Wait for completion")
+        
+        let cancellable = sut.loadPublisher()
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure:
+                    XCTFail("Expected succeeds")
+                }
+                
+                exp.fulfill()
+            } receiveValue: { pokemon in
+                XCTAssertEqual(pokemon, model)
+            }
+        
+        client.complete(withStatusCode: 200, data: data)
+
+        wait(for: [exp], timeout: 1.0)
+        cancellable.cancel()
+    }
+    
     // MARK: - Helper
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: PokemonLoader, client: HTTPClientSpy) {
@@ -73,5 +127,4 @@ final class LoadPokemonFromRemoteUseCaseTests: XCTestCase {
         
         wait(for: [exp], timeout: 1.0)
     }
-
 }
