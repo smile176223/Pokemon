@@ -90,6 +90,34 @@ final class PokemonMapperTests: XCTestCase {
         XCTAssertEqual(pokemon, .failure(RemotePokemonLoader.Error.invalidData))
     }
     
+    func test_map_deliversPokemonOnValidJSON() {
+        let json: [String: Any] = [
+            "name": "pikachu",
+            "height": 4,
+            "weight": 60,
+            "id": 25,
+            "types": [
+                [
+                    "type": [
+                        "name": "electric"
+                    ]
+                ]
+            ],
+            "sprites": [
+                "other": [
+                    "home": [
+                        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/25.png"
+                    ]
+                ]
+            ]
+        ].compactMapValues { $0 }
+        let data = makeData(json)
+        
+        let pokemon = PokemonMapper.map(data: data)
+        
+        XCTAssertEqual(pokemon, .success(Pokemon(name: "pikachu", height: 4, weight: 60, id: 25, type: "electric", spritesImage: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/25.png")))
+    }
+    
     
     // MARK: - Helper
     
