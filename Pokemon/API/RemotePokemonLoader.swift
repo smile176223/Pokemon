@@ -25,7 +25,7 @@ public final class RemotePokemonLoader: PokemonLoader {
         client.get(from: url) { result in
             switch result {
             case let .success((data, response)):
-                break
+                completion(PokemonMapper.map(data: data, from: response))
                 
             case .failure:
                 completion(.failure(.unexpectedError))

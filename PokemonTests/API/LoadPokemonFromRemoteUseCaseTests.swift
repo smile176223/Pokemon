@@ -24,6 +24,16 @@ final class LoadPokemonFromRemoteUseCaseTests: XCTestCase {
         })
     }
     
+    func test_load_deliversPokemonOn200Response() {
+        let (sut, client) = makeSUT()
+        let (model, json) = makePokemon()
+        let data = makeData(json)
+        
+        expect(sut, toCompleteWith: .success(model), when: {
+            client.complete(withStatusCode: 200, data: data)
+        })
+    }
+    
     // MARK: - Helper
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: PokemonLoader, client: HTTPClientSpy) {
