@@ -13,6 +13,7 @@
 		0C00D9822C869681007DDBA2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C00D9812C869681007DDBA2 /* Preview Assets.xcassets */; };
 		0C00D98F2C869A7B007DDBA2 /* LoadPokemonFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D98E2C869A7B007DDBA2 /* LoadPokemonFromRemoteUseCaseTests.swift */; };
 		0C00D9972C86B22E007DDBA2 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9962C86B22E007DDBA2 /* HTTPClientSpy.swift */; };
+		0C00D9992C86B2EB007DDBA2 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9982C86B2EB007DDBA2 /* XCTestCase+MemoryLeakTracking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		0C00D98C2C869A7B007DDBA2 /* PokemonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C00D98E2C869A7B007DDBA2 /* LoadPokemonFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPokemonFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 		0C00D9962C86B22E007DDBA2 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
+		0C00D9982C86B2EB007DDBA2 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				0C00D9962C86B22E007DDBA2 /* HTTPClientSpy.swift */,
+				0C00D9982C86B2EB007DDBA2 /* XCTestCase+MemoryLeakTracking.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 			files = (
 				0C00D98F2C869A7B007DDBA2 /* LoadPokemonFromRemoteUseCaseTests.swift in Sources */,
 				0C00D9972C86B22E007DDBA2 /* HTTPClientSpy.swift in Sources */,
+				0C00D9992C86B2EB007DDBA2 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
