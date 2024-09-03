@@ -87,7 +87,15 @@ final class PokemonMapperTests: XCTestCase {
         
         let pokemon = PokemonMapper.map(data: data)
         
-        XCTAssertEqual(pokemon, .failure(RemotePokemonLoader.Error.invalidData))
+        XCTAssertEqual(pokemon, .failure(.invalidData))
+    }
+    
+    func test_map_deliversInvalidDataErrorOnInvalidJSON() {
+        let data = Data("Invalid json".utf8)
+        
+        let pokemon = PokemonMapper.map(data: data)
+        
+        XCTAssertEqual(pokemon, .failure(.invalidData))
     }
     
     func test_map_deliversPokemonOnValidJSON() {
