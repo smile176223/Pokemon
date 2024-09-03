@@ -20,22 +20,50 @@ struct PokemonView: View {
     }
     
     var body: some View {
-        pokemonView()
+        statusView()
             .onAppear(perform: viewModel.load)
     }
     
     @ViewBuilder
-    private func pokemonView() -> some View {
+    private func statusView() -> some View {
         switch viewModel.status {
         case .loading:
-            Text("Loading...")
+            ProgressView()
             
         case let .done(pokemon):
-            Text(pokemon.name)
+            pokemonView(pokemon)
             
         case let .error(error):
             Text("Oh no, got error: \(error)")
         }
+    }
+    
+    @ViewBuilder
+    private func pokemonView(_ pokemon: Pokemon) -> some View {
+        VStack {
+            AsyncImage(url: URL(string: pokemon.spritesImage)) { phase in
+                switch phase {
+                case let .success(image):
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    
+                case let .failure(error):
+                    Color.gray
+                    
+                default:
+                    ProgressView()
+                }
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 8))
+            .overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(Color.lightGray, lineWidth: 4)
+            )
+            
+            Spacer()
+        }
+        .padding(.all, 12)
     }
 }
 
