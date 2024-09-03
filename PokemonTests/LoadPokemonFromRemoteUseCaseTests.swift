@@ -56,20 +56,16 @@ class HTTPClientSpy: HTTPClient {
 final class LoadPokemonFromRemoteUseCaseTests: XCTestCase {
 
     func test_init_doesNotRequestsDataFromURL() {
-        let url = anyURL()
-        let client = HTTPClientSpy()
-        let loader = RemotePokemonLoader(url: url, client: client)
+        let (_, client) = makeSUT()
         
         XCTAssertTrue(client.requestedURLs.isEmpty)
     }
     
     func test_load_deliversErrorOnClientError() {
-        let url = anyURL()
-        let client = HTTPClientSpy()
-        let loader = RemotePokemonLoader(url: url, client: client)
+        let (sut, client) = makeSUT()
         
         let exp = expectation(description: "Wait for completion")
-        loader.load { receivedResult in
+        sut.load { receivedResult in
             switch receivedResult {
             case let .success(item):
                 XCTFail("Should get error")
@@ -87,6 +83,14 @@ final class LoadPokemonFromRemoteUseCaseTests: XCTestCase {
     }
     
     // MARK: - Helper
+    
+    private func makeSUT() -> (sut: RemotePokemonLoader, client: HTTPClientSpy) {
+        let url = anyURL()
+        let client = HTTPClientSpy()
+        let loader = RemotePokemonLoader(url: url, client: client)
+        
+        return (loader, client)
+    }
     
     private func anyURL() -> URL {
         URL(string: "https://any-url.com")!
