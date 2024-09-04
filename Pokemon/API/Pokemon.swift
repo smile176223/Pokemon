@@ -45,6 +45,6 @@ extension Pokemon {
     }
     
     public var displayTypeTitle: String {
-        "特性"
+        "type"
     }
 }
