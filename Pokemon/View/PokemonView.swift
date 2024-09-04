@@ -31,7 +31,7 @@ struct PokemonView: View {
             ProgressView()
             
         case let .done(pokemon):
-            VStack {
+            VStack(spacing: 12) {
                 pokemonImageView(pokemon)
                 
                 pokemonInfoView(pokemon)
