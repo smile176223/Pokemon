@@ -35,8 +35,8 @@ public struct PokemonMapper {
         }
         
         let name: String
-        let height: Int
-        let weight: Int
+        let height: Double
+        let weight: Double
         let id: Int
         let types: [PokemonType]
         let sprites: Sprites

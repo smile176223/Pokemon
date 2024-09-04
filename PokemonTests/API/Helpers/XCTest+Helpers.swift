@@ -28,8 +28,8 @@ extension HTTPURLResponse {
 
 func makePokemon(
     name: String = "pikachu",
-    height: Int = 4,
-    weight: Int = 60,
+    height: Double = 4,
+    weight: Double = 60,
     id: Int = 25,
     type: String? = "electric",
     spritesImage: String = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/25.png"
