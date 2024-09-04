@@ -24,3 +24,27 @@ public struct Pokemon: Hashable {
         self.spritesImage = spritesImage
     }
 }
+
+extension Pokemon {
+    public var displayName: String {
+        "Name: \(name.capitalized)"
+    }
+    
+    public var displayHeight: String {
+        let meterHeight = height / 10
+        return "Height: \(meterHeight)m"
+    }
+    
+    public var displayWeight: String {
+        let kilogramWeight = weight / 10
+        return "Weight: \(kilogramWeight)kg"
+    }
+    
+    public var displayId: String {
+        "ID: #0\(id)"
+    }
+    
+    public var displayTypeTitle: String {
+        "特性"
+    }
+}

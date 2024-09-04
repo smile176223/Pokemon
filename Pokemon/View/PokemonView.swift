@@ -72,13 +72,13 @@ struct PokemonView: View {
             Color.lightGray
                 .overlay(alignment: .topLeading) {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("Name: \(pokemon.name)")
+                        Text(pokemon.displayName)
                             .themeTextStyle()
-                        Text("Height: \(pokemon.height)m")
+                        Text(pokemon.displayHeight)
                             .themeTextStyle()
-                        Text("Weight: \(pokemon.weight)kg")
+                        Text(pokemon.displayWeight)
                             .themeTextStyle()
-                        Text("Id: #\(pokemon.id)")
+                        Text(pokemon.displayId)
                             .themeTextStyle()
                     }
                     .padding(.all, 12)
@@ -89,7 +89,7 @@ struct PokemonView: View {
                 .overlay(alignment: .topLeading) {
                     GeometryReader { proxy in
                         VStack(alignment: .leading, spacing: 4) {
-                            Text("特性")
+                            Text(pokemon.displayTypeTitle)
                                 .themeTextStyle()
                             
                             Text(pokemon.type)
