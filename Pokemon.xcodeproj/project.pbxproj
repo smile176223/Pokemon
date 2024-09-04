@@ -29,6 +29,7 @@
 		0C00D9B82C86F21B007DDBA2 /* PokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9B72C86F21B007DDBA2 /* PokemonViewModel.swift */; };
 		0C00D9BC2C86F318007DDBA2 /* PokemonViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9BB2C86F318007DDBA2 /* PokemonViewModelTests.swift */; };
 		0C00D9BF2C86FFE7007DDBA2 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9BE2C86FFE7007DDBA2 /* Color+Extension.swift */; };
+		0C00D9C12C87E82B007DDBA2 /* Text+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C00D9C02C87E82B007DDBA2 /* Text+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		0C00D9B72C86F21B007DDBA2 /* PokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModel.swift; sourceTree = "<group>"; };
 		0C00D9BB2C86F318007DDBA2 /* PokemonViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModelTests.swift; sourceTree = "<group>"; };
 		0C00D9BE2C86FFE7007DDBA2 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		0C00D9C02C87E82B007DDBA2 /* Text+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				0C00D9BE2C86FFE7007DDBA2 /* Color+Extension.swift */,
+				0C00D9C02C87E82B007DDBA2 /* Text+Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				0C00D97C2C86967F007DDBA2 /* PokemonView.swift in Sources */,
 				0C00D9A22C86DB22007DDBA2 /* RemotePokemonLoader.swift in Sources */,
 				0C00D9A42C86DB36007DDBA2 /* HTTPClient.swift in Sources */,
+				0C00D9C12C87E82B007DDBA2 /* Text+Extension.swift in Sources */,
 				0C00D9AD2C86E340007DDBA2 /* URLSessionHTTPClient.swift in Sources */,
 				0C00D9A02C86DB10007DDBA2 /* Pokemon.swift in Sources */,
 				0C00D9B82C86F21B007DDBA2 /* PokemonViewModel.swift in Sources */,

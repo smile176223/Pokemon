@@ -31,7 +31,12 @@ struct PokemonView: View {
             ProgressView()
             
         case let .done(pokemon):
-            pokemonView(pokemon)
+            VStack {
+                pokemonImageView(pokemon)
+                
+                pokemonInfoView(pokemon)
+            }
+            .padding(.all, 12)
             
         case let .error(error):
             Text("Oh no, got error: \(error)")
@@ -39,31 +44,66 @@ struct PokemonView: View {
     }
     
     @ViewBuilder
-    private func pokemonView(_ pokemon: Pokemon) -> some View {
-        VStack {
-            AsyncImage(url: URL(string: pokemon.spritesImage)) { phase in
-                switch phase {
-                case let .success(image):
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                    
-                case .failure:
-                    Color.gray
-                    
-                default:
-                    ProgressView()
-                }
+    private func pokemonImageView(_ pokemon: Pokemon) -> some View {
+        AsyncImage(url: URL(string: pokemon.spritesImage)) { phase in
+            switch phase {
+            case let .success(image):
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                
+            case .failure:
+                Color.clear
+                
+            default:
+                ProgressView()
             }
-            .clipShape(RoundedRectangle(cornerRadius: 8))
-            .overlay(
-                RoundedRectangle(cornerRadius: 8)
-                    .stroke(Color.lightGray, lineWidth: 4)
-            )
-            
-            Spacer()
         }
-        .padding(.all, 12)
+        .clipShape(RoundedRectangle(cornerRadius: 8))
+        .overlay(
+            RoundedRectangle(cornerRadius: 8)
+                .stroke(Color.lightGray, lineWidth: 4)
+        )
+    }
+    
+    @ViewBuilder
+    private func pokemonInfoView(_ pokemon: Pokemon) -> some View {
+        HStack(spacing: 12) {
+            Color.lightGray
+                .overlay(alignment: .topLeading) {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Name: \(pokemon.name)")
+                            .themeTextStyle()
+                        Text("Height: \(pokemon.height)m")
+                            .themeTextStyle()
+                        Text("Weight: \(pokemon.weight)kg")
+                            .themeTextStyle()
+                        Text("Id: #\(pokemon.id)")
+                            .themeTextStyle()
+                    }
+                    .padding(.all, 12)
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+            
+            Color.clear
+                .overlay(alignment: .topLeading) {
+                    GeometryReader { proxy in
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("特性")
+                                .themeTextStyle()
+                            
+                            Text(pokemon.type)
+                                .themeTextStyle()
+                                .frame(width: proxy.size.width - 24)
+                                .background {
+                                    Color.lightGray
+                                }
+                                .clipShape(RoundedRectangle(cornerRadius: 18))
+                        }
+                        .padding(.all, 12)
+                    }
+                }
+        }
     }
 }
 
